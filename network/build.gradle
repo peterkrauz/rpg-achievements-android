@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.moshi
+    implementation Libraries.kotlin
+    implementation Libraries.retrofit
+    implementation Libraries.okHttpInterceptor
+    implementation Libraries.retrofitMoshiConverter
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
