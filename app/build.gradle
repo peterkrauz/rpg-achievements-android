@@ -13,5 +13,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libraries.ktx
     implementation Libraries.kotlin
+    implementation Libraries.threeTen
     implementation Libraries.appCompat
+    implementation Libraries.constraintLayout
 }

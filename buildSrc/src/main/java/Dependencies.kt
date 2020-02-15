@@ -22,6 +22,7 @@ object Versions {
     const val koin = "2.0.1"
     const val coil = "0.9.1"
     const val material = "1.0.0"
+    const val threeTen = "1.2.2"
 }
 
 object TestVersions {
@@ -59,6 +60,8 @@ object Libraries {
 
     const val coil = "io.coil-kt:coil:${Versions.coil}"
     const val material = "com.google.android.material:material:${Versions.material}"
+
+    const val threeTen = "com.jakewharton.threetenabp:threetenabp:${Versions.threeTen}"
 }
 
 object TestLibraries {
