@@ -1,3 +1,5 @@
 rootProject.name='Rpg Achievements'
-include ':app', ':network'
+include ':app'
+include ':data'
 include ':domain'
+include ':network'
