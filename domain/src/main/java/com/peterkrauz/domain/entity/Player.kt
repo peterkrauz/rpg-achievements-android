@@ -1,4 +1,4 @@
-package com.peterkrauz.domain
+package com.peterkrauz.domain.entity
 
 data class Player(
     val id: Int,

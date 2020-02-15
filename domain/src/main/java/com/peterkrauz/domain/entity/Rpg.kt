@@ -1,4 +1,4 @@
-package com.peterkrauz.domain
+package com.peterkrauz.domain.entity
 
 import org.threeten.bp.LocalDate
 
