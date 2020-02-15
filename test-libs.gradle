@@ -1,0 +1,5 @@
+dependencies {
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.testExtJunit
+    androidTestImplementation TestLibraries.espresso
+}
