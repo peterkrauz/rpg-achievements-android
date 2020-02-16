@@ -1,14 +1,14 @@
 package com.peterkrauz.data.api
 
-import com.peterkrauz.domain.entity.Player
+import com.peterkrauz.data.dto.PlayerDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface PlayerApi {
 
     @GET("api/players")
-    suspend fun getAll(): List<Player>
+    suspend fun getAll(): List<PlayerDto>
 
     @GET("api/players/{id}")
-    suspend fun getById(@Path("id") id: Int): Player
+    suspend fun getById(@Path("id") id: Int): PlayerDto
 }
