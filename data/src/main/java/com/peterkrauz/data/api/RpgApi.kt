@@ -6,9 +6,9 @@ import retrofit2.http.Path
 
 interface RpgApi {
 
-    @GET("api/rpgs")
+    @GET("api/v1/rpgs")
     suspend fun getAll(): List<RpgDto>
 
-    @GET("api/rpgs/{id}")
+    @GET("api/v1/rpgs/{id}")
     suspend fun getById(@Path("id") id: Int): RpgDto
 }

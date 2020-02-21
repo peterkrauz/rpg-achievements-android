@@ -6,9 +6,9 @@ import retrofit2.http.Path
 
 interface PlayerApi {
 
-    @GET("api/players")
+    @GET("api/v1/players")
     suspend fun getAll(): List<PlayerDto>
 
-    @GET("api/players/{id}")
+    @GET("api/v1/players/{id}")
     suspend fun getById(@Path("id") id: Int): PlayerDto
 }
