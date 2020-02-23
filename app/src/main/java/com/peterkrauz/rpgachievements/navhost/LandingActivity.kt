@@ -1,25 +1,21 @@
 package com.peterkrauz.rpgachievements.navhost
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.peterkrauz.presentation.common_ui.base.BaseActivity
 import com.peterkrauz.rpgachievements.R
 import com.peterkrauz.rpgachievements.modules.loginNavigationModule
 import com.peterkrauz.rpgachievements.navigation.Navigator
 import kotlinx.android.synthetic.main.activity_landing.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.koin.core.context.loadKoinModules
 
-class LandingActivity : AppCompatActivity() {
+class LandingActivity : BaseActivity(R.layout.activity_landing) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override val modules = listOf(loginNavigationModule)
+
+    override fun doPreCreation() {
         setTheme(R.style.RpgAchievements)
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_landing)
-
-        loadKoinModules(loginNavigationModule)
     }
 
     override fun onResume() {

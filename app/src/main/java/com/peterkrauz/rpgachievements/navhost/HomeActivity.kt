@@ -1,13 +1,10 @@
 package com.peterkrauz.rpgachievements.navhost
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.peterkrauz.presentation.common_ui.base.BaseActivity
 import com.peterkrauz.rpgachievements.R
+import org.koin.core.module.Module
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity(R.layout.activity_home) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-    }
+    override val modules = listOf<Module>()
 }
