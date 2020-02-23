@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply from: "$rootDir/common-plugins.gradle"
 apply from: "$rootDir/test-libs.gradle"
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     defaultConfig {
@@ -12,8 +14,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libraries.ktx
+    implementation Libraries.koin
     implementation Libraries.kotlin
+    implementation Libraries.material
     implementation Libraries.threeTen
     implementation Libraries.appCompat
+    implementation Libraries.navigation
     implementation Libraries.constraintLayout
+    implementation Libraries.lifecycleRuntimektx
+
+    implementation project(ModulePaths.login)
+    implementation project(ModulePaths.commonUi)
 }

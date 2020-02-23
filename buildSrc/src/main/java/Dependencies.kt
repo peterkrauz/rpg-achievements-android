@@ -71,8 +71,11 @@ object TestLibraries {
 }
 
 object ModulePaths {
-    const val app = ":app"
-    const val data = ":data"
-    const val domain = ":domain"
-    const val network = ":network"
+    const val app =      ":app"
+    const val data =     ":data"
+    const val domain =   ":domain"
+    const val network =  ":network"
+
+    const val login =    ":presentation:login"
+    const val commonUi = ":presentation:common-ui"
 }

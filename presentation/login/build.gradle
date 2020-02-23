@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/common-plugins.gradle"
+apply from: "$rootDir/test-libs.gradle"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.kotlin
+    implementation Libraries.appCompat
+    implementation Libraries.navigation
+    implementation Libraries.navigationUi
+    implementation Libraries.constraintLayout
+
+    implementation project(ModulePaths.commonUi)
+}
