@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:226616907406:android:fd186c46779d81a83adbdf\n",
+        "mobilesdk_app_id": "1:226616907406:android:fd186c46779d81a83adbdf",
         "android_client_info": {
           "package_name": "com.peterkrauz.rpgachievements"
         }
