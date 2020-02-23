@@ -2,12 +2,21 @@ apply plugin: 'com.android.application'
 apply from: "$rootDir/common-plugins.gradle"
 apply from: "$rootDir/test-libs.gradle"
 apply plugin: "androidx.navigation.safeargs.kotlin"
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.appdistribution'
 
 android {
     defaultConfig {
         applicationId ConfigVersion.applicationId
+    }
+    buildTypes {
+        release {
+            firebaseAppDistribution {
+                releaseNotesFile="releasenotes.txt"
+                testers="thaleszh@gmail.com, yanromano@hotmail.com, cairebritto@gmail.com, " +
+                        "krausepeterm@gmail.com"
+            }
+        }
     }
 }
 
@@ -21,6 +30,7 @@ dependencies {
     implementation Libraries.appCompat
     implementation Libraries.navigation
     implementation Libraries.constraintLayout
+    implementation Libraries.firebaseAnalytics
     implementation Libraries.lifecycleRuntimektx
 
     implementation project(ModulePaths.login)

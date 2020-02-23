@@ -1,6 +1,6 @@
 package com.peterkrauz.rpgachievements.navigation
 
-import com.peterkrauz.presentation.common_ui.LoginRouter
+import com.peterkrauz.presentation.common_ui.routers.LoginRouter
 import com.peterkrauz.rpgachievements.R
 
 object Navigator : BaseNavigator(), LoginRouter {

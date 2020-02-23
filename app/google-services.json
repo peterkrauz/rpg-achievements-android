@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "226616907406",
+    "firebase_url": "https://rpg-achievements.firebaseio.com",
+    "project_id": "rpg-achievements",
+    "storage_bucket": "rpg-achievements.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226616907406:android:fd186c46779d81a83adbdf\n",
+        "android_client_info": {
+          "package_name": "com.peterkrauz.rpgachievements"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226616907406-6o4s0bbrq4tcu4n4pl7a1ieu584usol9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzCbrSO4ef96gxgmcODxFVSixqVbTGlo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226616907406-6o4s0bbrq4tcu4n4pl7a1ieu584usol9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -23,6 +23,7 @@ object Versions {
     const val coil = "0.9.1"
     const val material = "1.0.0"
     const val threeTen = "1.2.2"
+    const val firebase = "17.2.2"
 }
 
 object TestVersions {
@@ -62,6 +63,8 @@ object Libraries {
     const val material = "com.google.android.material:material:${Versions.material}"
 
     const val threeTen = "com.jakewharton.threetenabp:threetenabp:${Versions.threeTen}"
+
+    const val firebaseAnalytics = "com.google.firebase:firebase-analytics:${Versions.firebase}"
 }
 
 object TestLibraries {
