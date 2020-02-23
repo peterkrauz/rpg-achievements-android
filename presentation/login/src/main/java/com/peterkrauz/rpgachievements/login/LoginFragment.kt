@@ -1,5 +1,5 @@
 package com.peterkrauz.rpgachievements.login
 
-import androidx.fragment.app.Fragment
+import com.peterkrauz.presentation.common_ui.base.BaseFragment
 
-class LoginFragment : Fragment(R.layout.fragment_login)
+class LoginFragment : BaseFragment(R.layout.fragment_login)
