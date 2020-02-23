@@ -5,21 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.peterkrauz.rpgachievements.R
-import com.peterkrauz.rpgachievements.modules.navigationModule
+import com.peterkrauz.rpgachievements.modules.loginNavigationModule
 import com.peterkrauz.rpgachievements.navigation.Navigator
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_landing.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.core.context.loadKoinModules
 
-class MainActivity : AppCompatActivity() {
+class LandingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.RpgAchievements)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_landing)
 
-        loadKoinModules(navigationModule)
+        loadKoinModules(loginNavigationModule)
     }
 
     override fun onResume() {

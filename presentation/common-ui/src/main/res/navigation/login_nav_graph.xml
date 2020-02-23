@@ -11,7 +11,8 @@
 
         <action
             android:id="@+id/action_splash_to_login"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popEnterAnim="@anim/nav_default_enter_anim"/>
     </fragment>
 
     <fragment
