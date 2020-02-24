@@ -5,9 +5,5 @@ import com.peterkrauz.presentation.common_ui.extensions.paintStatusBar
 
 class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
-    override fun setupView() {
-        super.setupView()
-        paintStatusBar(R.color.colorPrimary)
-    }
 
 }

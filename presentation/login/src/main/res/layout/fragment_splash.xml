@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/open_sans"
         android:textColor="@android:color/white"
-        android:textSize="26sp"
+        android:textSize="28sp"
         android:text="@string/rpg_achievements"
         android:layout_marginEnd="36dp"
         app:layout_constraintTop_toTopOf="@id/imageViewSplash"

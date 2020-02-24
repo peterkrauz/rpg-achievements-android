@@ -17,6 +17,13 @@ android {
                         "krausepeterm@gmail.com"
             }
         }
+        debug {
+            firebaseAppDistribution {
+                releaseNotesFile="releasenotes.txt"
+                testers="thaleszh@gmail.com, yanromano@hotmail.com, cairebritto@gmail.com, " +
+                        "krausepeterm@gmail.com"
+            }
+        }
     }
 }
 
