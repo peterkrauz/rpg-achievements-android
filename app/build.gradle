@@ -13,14 +13,15 @@ android {
         release {
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
-                testers="thaleszh@gmail.com, yanromano@hotmail.com, cairebritto@gmail.com, " +
-                        "krausepeterm@gmail.com"
+                testers="krausepeterm@gmail.com, thaleszh@gmail.com, " +
+                        "cairebritto@gmail.com, yanromano78945@gmail.com"
             }
         }
         debug {
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
-                groups="os-loco"
+                testers="krausepeterm@gmail.com, thaleszh@gmail.com, " +
+                        "cairebritto@gmail.com, yanromano78945@gmail.com"
             }
         }
     }
