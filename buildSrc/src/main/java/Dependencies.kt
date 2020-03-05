@@ -63,21 +63,29 @@ object Libraries {
 
 object TestVersions {
     const val junit = "4.12"
-    const val mockito = "3.2.4"
+    const val coreArch = "2.0.0"
+    const val mockito = "2.8.9"
     const val mockitoKotlin = "2.2.0"
     const val espresso = "3.2.0"
     const val testRunner = "0.5"
     const val testExtJunit = "1.1.1"
     const val supportAnnotations = "24.0.0"
+    const val hamcrest = "1.3"
 }
 
 object TestLibraries {
     const val junit = "junit:junit:${TestVersions.junit}"
-    const val mockito = "org.mockito:mockito-android:${TestVersions.mockito}"
-    const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestVersions.mockitoKotlin}"
+    const val hamcrest = "org.hamcrest:hamcrest-all:${TestVersions.hamcrest}"
+    const val mockitoCore = "org.mockito:mockito-core:${TestVersions.mockito}"
+    const val mockitoAndroid = "org.mockito:mockito-android:${TestVersions.mockito}"
     const val testExtJunit = "androidx.test.ext:junit:${TestVersions.testExtJunit}"
     const val testRunner = "com.android.support.test:runner:${TestVersions.testRunner}"
     const val espresso = "androidx.test.espresso:espresso-core:${TestVersions.espresso}"
+    const val coreArchTesting = "androidx.arch.core:core-testing:${TestVersions.coreArch}"
+    const val espressoIntents = "androidx.test.espresso:espresso-intents:${TestVersions.espresso}"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+    const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestVersions.mockitoKotlin}"
+    const val idlingResource = "androidx.test.espresso:espresso-idling-resource:${TestVersions.espresso}"
     const val supportAnnotations = "com.android.support:support-annotations:${TestVersions.supportAnnotations}"
 }
 
