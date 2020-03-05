@@ -8,13 +8,17 @@ dependencies {
     testImplementation TestLibraries.coroutinesTest
     testImplementation TestLibraries.mockitoAndroid
     testImplementation TestLibraries.coreArchTesting
+    testImplementation TestLibraries.testExtJunitKtx
     testImplementation TestLibraries.supportAnnotations
 
 
     // Dependencies for Android unit tests
     androidTestImplementation TestLibraries.espresso
+    androidTestImplementation TestLibraries.testRules
     androidTestImplementation TestLibraries.testRunner
     androidTestImplementation TestLibraries.mockitoCore
+    androidTestImplementation TestLibraries.testExtJunit
     androidTestImplementation TestLibraries.coroutinesTest
+    androidTestImplementation TestLibraries.testExtJunitKtx
     androidTestImplementation TestLibraries.supportAnnotations
 }

@@ -3,8 +3,6 @@ apply from: "$rootDir/common-plugins.gradle"
 apply from: "$rootDir/test-libs.gradle"
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation Libraries.kotlin
     implementation Libraries.material
     implementation Libraries.appCompat
     implementation Libraries.navigation

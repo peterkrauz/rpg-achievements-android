@@ -1,3 +1,0 @@
-package com.peterkrauz.rpgachievements.login
-
-class SplashFragmentTest
