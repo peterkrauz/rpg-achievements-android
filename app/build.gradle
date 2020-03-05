@@ -28,10 +28,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libraries.ktx
     implementation Libraries.koin
-    implementation Libraries.kotlin
     implementation Libraries.material
     implementation Libraries.threeTen
     implementation Libraries.appCompat

@@ -26,12 +26,6 @@ object Versions {
     const val firebase = "17.2.2"
 }
 
-object TestVersions {
-    const val junit = "4.12"
-    const val testExtJunit = "1.1.1"
-    const val espresso = "3.2.0"
-}
-
 object Libraries {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
@@ -67,15 +61,30 @@ object Libraries {
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics:${Versions.firebase}"
 }
 
+object TestVersions {
+    const val junit = "4.12"
+    const val mockito = "3.2.4"
+    const val mockitoKotlin = "2.2.0"
+    const val espresso = "3.2.0"
+    const val testRunner = "0.5"
+    const val testExtJunit = "1.1.1"
+    const val supportAnnotations = "24.0.0"
+}
+
 object TestLibraries {
     const val junit = "junit:junit:${TestVersions.junit}"
+    const val mockito = "org.mockito:mockito-android:${TestVersions.mockito}"
+    const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestVersions.mockitoKotlin}"
     const val testExtJunit = "androidx.test.ext:junit:${TestVersions.testExtJunit}"
+    const val testRunner = "com.android.support.test:runner:${TestVersions.testRunner}"
     const val espresso = "androidx.test.espresso:espresso-core:${TestVersions.espresso}"
+    const val supportAnnotations = "com.android.support:support-annotations:${TestVersions.supportAnnotations}"
 }
 
 object ModulePaths {
     const val app =      ":app"
     const val data =     ":data"
+    const val common =   ":common"
     const val domain =   ":domain"
     const val network =  ":network"
 
