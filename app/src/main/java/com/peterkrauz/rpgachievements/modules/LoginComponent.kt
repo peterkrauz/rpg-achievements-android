@@ -4,7 +4,7 @@ import com.peterkrauz.data.ServiceFactory
 import com.peterkrauz.data.api.LoginApi
 import com.peterkrauz.data.repository.LoginRepositoryImpl
 import com.peterkrauz.domain.application.LoginUseCase
-import com.peterkrauz.domain.repository.LoginRepository
+import com.peterkrauz.domain.repository.login.LoginRepository
 import com.peterkrauz.domain.usecase.LoginUseCaseImpl
 import com.peterkrauz.rpgachievements.login.LoginViewModel
 import org.koin.dsl.module
