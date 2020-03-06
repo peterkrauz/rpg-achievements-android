@@ -4,6 +4,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.peterkrauz.presentation.common_ui.base.BaseActivity
 import com.peterkrauz.rpgachievements.R
+import com.peterkrauz.rpgachievements.modules.LoginComponent
 import com.peterkrauz.rpgachievements.modules.loginNavigationModule
 import com.peterkrauz.rpgachievements.navigation.Navigator
 import kotlinx.android.synthetic.main.activity_landing.*
@@ -12,7 +13,10 @@ import kotlinx.coroutines.launch
 
 class LandingActivity : BaseActivity(R.layout.activity_landing) {
 
-    override val modules = listOf(loginNavigationModule)
+    override val modules = listOf(
+        loginNavigationModule,
+        *(LoginComponent.modules().toTypedArray())
+    )
 
     override fun doPreCreation() {
         setTheme(R.style.RpgAchievements)
@@ -30,7 +34,7 @@ class LandingActivity : BaseActivity(R.layout.activity_landing) {
 
     override fun onDestroy() {
         super.onDestroy()
-        Navigator.bind(navHostFragment.findNavController())
+        Navigator.unBind()
     }
 
     override fun onSupportNavigateUp(): Boolean =

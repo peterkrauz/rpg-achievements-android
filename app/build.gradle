@@ -34,10 +34,13 @@ dependencies {
     implementation Libraries.threeTen
     implementation Libraries.appCompat
     implementation Libraries.navigation
+    implementation Libraries.koinViewModel
     implementation Libraries.constraintLayout
     implementation Libraries.firebaseAnalytics
     implementation Libraries.lifecycleRuntimektx
 
+    implementation project(ModulePaths.data)
     implementation project(ModulePaths.login)
+    implementation project(ModulePaths.domain)
     implementation project(ModulePaths.commonUi)
 }

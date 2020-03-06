@@ -2,6 +2,7 @@ dependencies {
     // Dependencies for local unit tests
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.hamcrest
+    testImplementation TestLibraries.testRules
     testImplementation TestLibraries.mockitoCore
     testImplementation TestLibraries.testExtJunit
     testImplementation TestLibraries.mockitoKotlin
@@ -21,4 +22,10 @@ dependencies {
     androidTestImplementation TestLibraries.coroutinesTest
     androidTestImplementation TestLibraries.testExtJunitKtx
     androidTestImplementation TestLibraries.supportAnnotations
+
+
+    testImplementation Libraries.koin
+    testImplementation TestLibraries.koinTest
+    androidTestImplementation Libraries.koin
+    androidTestImplementation TestLibraries.koinTest
 }

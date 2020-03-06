@@ -76,15 +76,16 @@ object TestVersions {
 
 object TestLibraries {
     const val junit = "junit:junit:${TestVersions.junit}"
+    const val koinTest = "org.koin:koin-test:${Versions.koin}"
     const val testRules = "androidx.test:rules:${TestVersions.testRules}"
     const val hamcrest = "org.hamcrest:hamcrest-all:${TestVersions.hamcrest}"
     const val mockitoCore = "org.mockito:mockito-core:${TestVersions.mockito}"
-    const val mockitoAndroid = "org.mockito:mockito-android:${TestVersions.mockito}"
     const val testExtJunit = "androidx.test.ext:junit:${TestVersions.testExtJunit}"
-    const val testExtJunitKtx = "androidx.test.ext:junit-ktx:${TestVersions.testExtJunit}"
+    const val mockitoAndroid = "org.mockito:mockito-android:${TestVersions.mockito}"
     const val testRunner = "com.android.support.test:runner:${TestVersions.testRunner}"
     const val espresso = "androidx.test.espresso:espresso-core:${TestVersions.espresso}"
     const val coreArchTesting = "androidx.arch.core:core-testing:${TestVersions.coreArch}"
+    const val testExtJunitKtx = "androidx.test.ext:junit-ktx:${TestVersions.testExtJunit}"
     const val espressoIntents = "androidx.test.espresso:espresso-intents:${TestVersions.espresso}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${TestVersions.mockitoKotlin}"

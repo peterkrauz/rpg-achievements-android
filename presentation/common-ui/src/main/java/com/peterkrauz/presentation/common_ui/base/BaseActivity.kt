@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import org.koin.core.context.loadKoinModules
+import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
 
 abstract class BaseActivity(@LayoutRes val layoutId: Int) : AppCompatActivity() {
@@ -21,4 +22,8 @@ abstract class BaseActivity(@LayoutRes val layoutId: Int) : AppCompatActivity() 
     open fun doPreCreation() {}
     open fun doPostCreation() {}
 
+    override fun onDestroy() {
+        unloadKoinModules(modules)
+        super.onDestroy()
+    }
 }

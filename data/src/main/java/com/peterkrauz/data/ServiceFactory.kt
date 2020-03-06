@@ -2,9 +2,9 @@ package com.peterkrauz.data
 
 import com.peterkrauz.network.NetworkBuilder
 
-internal object ServiceFactory {
+object ServiceFactory {
 
-    private val retrofit by lazy {
+    val retrofit by lazy {
         NetworkBuilder.buildNetworkClient(BuildConfig.BASE_URL, BuildConfig.DEBUG, BuildConfig.API_KEY)
     }
 
