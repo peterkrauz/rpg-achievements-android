@@ -6,9 +6,9 @@ import retrofit2.http.Path
 
 interface AchievementApi {
 
-    @GET("api/v1/achievements")
+    @GET("api/achievements/")
     suspend fun getAll(): List<AchievementDto>
 
-    @GET("api/v1/achievements/{id}")
-    suspend fun getById(@Path("id") id: Int): AchievementDto
+    @GET("api/achievements/{achievementId}/")
+    suspend fun getById(@Path("achievementId") id: Int): AchievementDto
 }

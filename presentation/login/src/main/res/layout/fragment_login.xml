@@ -2,7 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient_login">
+    android:background="@drawable/gradient_login"
+    android:id="@+id/loginRootLayout">
 
     <ProgressBar
         android:id="@+id/progressBarLoading"
@@ -43,12 +44,12 @@
         app:layout_constraintStart_toEndOf="@id/imageViewSplash"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputEmail"
+        android:id="@+id/textInputUsername"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textColorHint="@color/white"
-        android:hint="@string/type_email"
+        android:hint="@string/type_username"
         android:layout_marginTop="28dp"
         app:errorEnabled="true"
         app:layout_constraintTop_toBottomOf="@id/imageViewSplash"
@@ -73,7 +74,7 @@
         android:hint="@string/type_password"
         android:layout_marginTop="4dp"
         app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/textInputEmail"
+        app:layout_constraintTop_toBottomOf="@id/textInputUsername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

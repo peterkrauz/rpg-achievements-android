@@ -1,7 +1,8 @@
 package com.peterkrauz.rpgachievements.modules
 
 import com.peterkrauz.data.ServiceFactory
-import com.peterkrauz.data.api.LoginApi
+import com.peterkrauz.data.api.SessionApi
+import com.peterkrauz.data.mapper.AuthorizationTokenMapper
 import com.peterkrauz.data.repository.LoginRepositoryImpl
 import com.peterkrauz.domain.application.LoginUseCase
 import com.peterkrauz.domain.repository.login.LoginRepository
@@ -20,8 +21,9 @@ object LoginComponent {
     }
 
     private val dataModule = module {
-        single<LoginRepository> { LoginRepositoryImpl(loginApi = get()) }
-        single<LoginApi> { ServiceFactory.createService() }
+        single { AuthorizationTokenMapper() }
+        single<LoginRepository> { LoginRepositoryImpl(sessionApi = get(), mapper = get()) }
+        single<SessionApi> { ServiceFactory.createService() }
     }
 
     fun modules() = listOf(presentationModule, domainModule, dataModule)

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.peterkrauz.rpgachievements.login.SplashFragment"
+        android:name="com.peterkrauz.rpgachievements.login.splash.SplashFragment"
         android:label="SplashFragment">
 
         <action

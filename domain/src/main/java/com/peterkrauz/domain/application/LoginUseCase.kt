@@ -1,5 +1,7 @@
 package com.peterkrauz.domain.application
 
+import com.peterkrauz.domain.entity.AuthorizationToken
+
 interface LoginUseCase {
-    suspend fun login(email: String, password: String)
+    suspend fun login(username: String, password: String): AuthorizationToken
 }
