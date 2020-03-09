@@ -40,6 +40,7 @@ dependencies {
     implementation Libraries.lifecycleRuntimektx
 
     implementation project(ModulePaths.data)
+    implementation project(ModulePaths.home)
     implementation project(ModulePaths.login)
     implementation project(ModulePaths.domain)
     implementation project(ModulePaths.commonUi)

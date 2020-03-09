@@ -2,7 +2,7 @@ package com.peterkrauz.rpgachievements.navhost
 
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.peterkrauz.presentation.common_ui.base.BaseActivity
+import com.peterkrauz.rpgachievements.BaseActivity
 import com.peterkrauz.rpgachievements.R
 import com.peterkrauz.rpgachievements.modules.LoginComponent
 import com.peterkrauz.rpgachievements.modules.loginNavigationModule
@@ -32,11 +32,5 @@ class LandingActivity : BaseActivity(R.layout.activity_landing) {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Navigator.unBind()
-    }
-
-    override fun onSupportNavigateUp(): Boolean =
-        navHostFragment.findNavController().navigateUp()
+    override fun onSupportNavigateUp() = navHostFragment.findNavController().navigateUp()
 }

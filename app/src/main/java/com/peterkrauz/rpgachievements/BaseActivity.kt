@@ -1,4 +1,4 @@
-package com.peterkrauz.presentation.common_ui.base
+package com.peterkrauz.rpgachievements
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

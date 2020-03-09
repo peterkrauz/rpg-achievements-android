@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/common-plugins.gradle"
+apply from: "$rootDir/test-libs.gradle"
+
+dependencies {
+    implementation Libraries.koin
+    implementation Libraries.material
+    implementation Libraries.appCompat
+    implementation Libraries.navigation
+    implementation Libraries.navigationUi
+    implementation Libraries.koinViewModel
+    implementation Libraries.constraintLayout
+
+    implementation project(ModulePaths.domain)
+    implementation project(ModulePaths.common)
+    implementation project(ModulePaths.commonUi)
+}

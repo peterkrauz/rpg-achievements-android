@@ -19,6 +19,6 @@ dependencies {
     implementation Libraries.coroutinesAndroid
     kapt Libraries.moshiCodegen
 
-    api project(ModulePaths.domain)
+    implementation project(ModulePaths.domain)
     implementation project(ModulePaths.network)
 }

@@ -101,6 +101,7 @@ object ModulePaths {
     const val domain =   ":domain"
     const val network =  ":network"
 
+    const val home =     ":presentation:home"
     const val login =    ":presentation:login"
     const val commonUi = ":presentation:common-ui"
 }
