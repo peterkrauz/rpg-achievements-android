@@ -1,11 +1,11 @@
-package com.peterkrauz.rpgachievements.navhost
+package com.peterkrauz.rpgachievements.navhosts
 
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.peterkrauz.rpgachievements.BaseActivity
 import com.peterkrauz.rpgachievements.R
-import com.peterkrauz.rpgachievements.modules.LoginComponent
-import com.peterkrauz.rpgachievements.navigation.Navigator
+import com.peterkrauz.rpgachievements.di.components.LoginComponent
+import com.peterkrauz.rpgachievements.navhosts.base.BaseActivity
+import com.peterkrauz.rpgachievements.navigator.Navigator
 import kotlinx.android.synthetic.main.activity_landing.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

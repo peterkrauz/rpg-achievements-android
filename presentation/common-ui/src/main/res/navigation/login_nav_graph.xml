@@ -28,7 +28,7 @@
 
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.peterkrauz.rpgachievements.navhost.HomeActivity"
+        android:name="com.peterkrauz.rpgachievements.navhosts.HomeActivity"
         android:label="HomeActivity"/>
 
 </navigation>

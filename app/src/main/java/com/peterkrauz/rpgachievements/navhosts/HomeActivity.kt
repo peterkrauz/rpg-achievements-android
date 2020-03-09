@@ -1,10 +1,10 @@
-package com.peterkrauz.rpgachievements.navhost
+package com.peterkrauz.rpgachievements.navhosts
 
 import androidx.navigation.fragment.findNavController
-import com.peterkrauz.rpgachievements.BaseActivity
 import com.peterkrauz.rpgachievements.R
-import com.peterkrauz.rpgachievements.modules.HomeComponent
-import com.peterkrauz.rpgachievements.navigation.Navigator
+import com.peterkrauz.rpgachievements.di.components.HomeComponent
+import com.peterkrauz.rpgachievements.navhosts.base.BaseActivity
+import com.peterkrauz.rpgachievements.navigator.Navigator
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : BaseActivity(R.layout.activity_home) {

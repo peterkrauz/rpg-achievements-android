@@ -1,4 +1,4 @@
-package com.peterkrauz.rpgachievements.modules
+package com.peterkrauz.rpgachievements.di.components
 
 import com.peterkrauz.data.ServiceFactory
 import com.peterkrauz.data.api.SessionApi
@@ -8,8 +8,9 @@ import com.peterkrauz.domain.application.LoginUseCase
 import com.peterkrauz.domain.repository.login.LoginRepository
 import com.peterkrauz.domain.usecase.LoginUseCaseImpl
 import com.peterkrauz.presentation.common_ui.routers.LoginRouter
+import com.peterkrauz.rpgachievements.di.DIComponent
 import com.peterkrauz.rpgachievements.login.LoginViewModel
-import com.peterkrauz.rpgachievements.navigation.Navigator
+import com.peterkrauz.rpgachievements.navigator.Navigator
 import org.koin.dsl.module
 
 object LoginComponent : DIComponent {

@@ -1,4 +1,4 @@
-package com.peterkrauz.rpgachievements
+package com.peterkrauz.rpgachievements.navhosts.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

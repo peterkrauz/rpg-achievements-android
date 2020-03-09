@@ -1,4 +1,4 @@
-package com.peterkrauz.rpgachievements.modules
+package com.peterkrauz.rpgachievements.di
 
 import org.koin.core.module.Module
 

@@ -1,4 +1,4 @@
-package com.peterkrauz.rpgachievements.navigation
+package com.peterkrauz.rpgachievements.navigator
 
 import androidx.navigation.NavController
 

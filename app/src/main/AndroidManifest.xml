@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/RpgAchievements.Launcher">
-        <activity android:name=".navhost.LandingActivity"
+        <activity android:name=".navhosts.LandingActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".navhost.HomeActivity"
+        <activity android:name=".navhosts.HomeActivity"
             android:screenOrientation="portrait"/>
     </application>
 

@@ -1,4 +1,4 @@
-package com.peterkrauz.rpgachievements.navigation
+package com.peterkrauz.rpgachievements.navigator
 
 import com.peterkrauz.presentation.common_ui.routers.LoginRouter
 import com.peterkrauz.rpgachievements.R

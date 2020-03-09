@@ -7,7 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.peterkrauz.rpgachievements.login.LoginViewModel
-import com.peterkrauz.rpgachievements.navhost.LandingActivity
+import com.peterkrauz.rpgachievements.navhosts.LandingActivity
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
