@@ -12,4 +12,8 @@ object Navigator : BaseNavigator(), LoginRouter {
     override fun navigateFromLoginToHome() {
         navController?.navigate(R.id.action_login_to_home)
     }
+
+    override fun navigateFromSplashToHome() {
+        navController?.navigate(R.id.action_splash_to_home)
+    }
 }

@@ -5,7 +5,9 @@ import com.peterkrauz.data.ServiceFactory
 import com.peterkrauz.data.api.SessionApi
 import com.peterkrauz.data.mapper.AuthorizationTokenMapper
 import com.peterkrauz.data.repository.LoginRepositoryImpl
+import com.peterkrauz.data.session.SessionStoreImpl
 import com.peterkrauz.domain.application.LoginUseCase
+import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.domain.repository.login.LoginRepository
 import com.peterkrauz.domain.usecase.LoginUseCaseImpl
 import com.peterkrauz.presentation.common_ui.routers.LoginRouter
@@ -24,6 +26,7 @@ object LoginComponent : DIComponent {
 
     override val domainModule = module {
         factory<LoginUseCase> { LoginUseCaseImpl(loginRepository = get()) }
+        single<SessionStore> { (appContext: Context) -> SessionStoreImpl(appContext) }
     }
 
     override val presentationModule = module {
