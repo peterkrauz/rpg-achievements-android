@@ -1,5 +1,6 @@
 package com.peterkrauz.rpgachievements.di.components
 
+import android.content.Context
 import com.peterkrauz.data.ServiceFactory
 import com.peterkrauz.data.api.SessionApi
 import com.peterkrauz.data.mapper.AuthorizationTokenMapper
@@ -22,11 +23,11 @@ object LoginComponent : DIComponent {
     }
 
     override val domainModule = module {
-        single<LoginUseCase> { LoginUseCaseImpl(loginRepository = get()) }
+        factory<LoginUseCase> { LoginUseCaseImpl(loginRepository = get()) }
     }
 
     override val presentationModule = module {
-        single { LoginViewModel(loginUseCase = get()) }
+        single { (appContext: Context) -> LoginViewModel(loginUseCase = get(), appContext = appContext) }
     }
 
     override val navigationModule = module {

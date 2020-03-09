@@ -51,7 +51,7 @@ class LoginFragmentTest : KoinTest {
         onView(withId(R.id.buttonLogin)).check(matches(isEnabled()))
 
         viewModel.login(
-            email = "abc@def.com",
+            username = "abc@def.com",
             password = "123456"
         )
 

@@ -11,12 +11,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.ktx
     implementation Libraries.moshi
     implementation Libraries.kotlin
     implementation Libraries.threeTen
     implementation Libraries.retrofit
     implementation Libraries.coroutines
     implementation Libraries.coroutinesAndroid
+
     kapt Libraries.moshiCodegen
 
     implementation project(ModulePaths.domain)
