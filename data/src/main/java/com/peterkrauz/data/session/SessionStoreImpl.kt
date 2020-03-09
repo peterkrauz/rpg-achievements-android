@@ -10,16 +10,24 @@ import com.peterkrauz.domain.entity.Player
 class SessionStoreImpl(private val appContext: Context) : SessionStore {
 
     private var hasSession: Boolean = false
+        set(value) {
+            field = value
+            storeSessionState()
+        }
+
+    private var sharedPrefs: SharedPreferences
+
+    init {
+        sharedPrefs = appContext.getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
+        hasSession = getSessionState()
+    }
 
     companion object {
         private const val SHARED_PREFS_KEY = "rpg_achievements_session_store"
         private const val AUTH_TOKEN_KEY = "rpg_achievements_auth_token"
         private const val PLAYER_NAME_KEY = "rpg_achievements_player_name"
         private const val PLAYER_ID_KEY = "rpg_achievements_player_ID"
-    }
-
-    private val sharedPrefs: SharedPreferences by lazy {
-        appContext.getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
+        private const val SESSION_STATE_KEY = "rpg_achievements_has_session"
     }
 
     override fun cacheToken(authToken: AuthorizationToken) {
@@ -52,4 +60,12 @@ class SessionStoreImpl(private val appContext: Context) : SessionStore {
     }
 
     override fun hasSession(): Boolean = hasSession
+
+    private fun storeSessionState() {
+        sharedPrefs.edit {
+            putBoolean(SESSION_STATE_KEY, hasSession)
+        }
+    }
+
+    private fun getSessionState() = sharedPrefs.getBoolean(SESSION_STATE_KEY, false)
 }

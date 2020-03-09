@@ -17,9 +17,7 @@
 
         <action
             android:id="@+id/action_splash_to_home"
-            app:destination="@id/homeActivity"
-            app:popUpTo="@id/login_nav_graph"
-            app:popUpToInclusive="true"/>
+            app:destination="@id/homeActivity"/>
     </fragment>
 
     <fragment
