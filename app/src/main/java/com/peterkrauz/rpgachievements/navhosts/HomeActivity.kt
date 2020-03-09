@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : BaseActivity(R.layout.activity_home) {
 
-    override val modules = listOf(*HomeComponent.modules().toTypedArray())
+    override val modules = HomeComponent.modules()
 
     override fun onResume() {
         super.onResume()

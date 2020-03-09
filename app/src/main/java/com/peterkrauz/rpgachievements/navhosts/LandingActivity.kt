@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class LandingActivity : BaseActivity(R.layout.activity_landing) {
 
-    override val modules = listOf(*(LoginComponent.modules().toTypedArray()))
+    override val modules = LoginComponent.modules()
 
     override fun doPreCreation() {
         setTheme(R.style.RpgAchievements)
