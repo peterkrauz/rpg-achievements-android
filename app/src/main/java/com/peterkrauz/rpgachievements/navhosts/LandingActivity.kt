@@ -37,6 +37,7 @@ class LandingActivity : BaseActivity(R.layout.activity_landing) {
 
             if (sessionStore.hasSession()) {
                 loginRouter.navigateFromSplashToHome()
+                finish()
             } else {
                 loginRouter.navigateFromSplashToLogin()
             }

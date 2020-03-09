@@ -7,6 +7,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.peterkrauz.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true"/>
 
 </navigation>

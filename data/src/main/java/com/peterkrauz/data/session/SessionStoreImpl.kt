@@ -7,7 +7,7 @@ import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.domain.entity.AuthorizationToken
 import com.peterkrauz.domain.entity.Player
 
-class SessionStoreImpl(private val appContext: Context) : SessionStore {
+class SessionStoreImpl(appContext: Context) : SessionStore {
 
     private var hasSession: Boolean = false
         set(value) {
