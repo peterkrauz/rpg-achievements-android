@@ -17,5 +17,5 @@ interface PlayerApi {
     suspend fun getById(@Path("playerId") id: Int): Response<PlayerDto>
 
     @POST("api/players/token/")
-    suspend fun getPlayerByToken(@Body body: TokenRequestBody): Response<List<PlayerDto>>
+    suspend fun getPlayerByToken(@Body body: TokenRequestBody): Response<PlayerDto>
 }

@@ -5,7 +5,6 @@ import androidx.navigation.fragment.findNavController
 import com.peterkrauz.rpgachievements.BaseActivity
 import com.peterkrauz.rpgachievements.R
 import com.peterkrauz.rpgachievements.modules.LoginComponent
-import com.peterkrauz.rpgachievements.modules.loginNavigationModule
 import com.peterkrauz.rpgachievements.navigation.Navigator
 import kotlinx.android.synthetic.main.activity_landing.*
 import kotlinx.coroutines.delay
@@ -13,10 +12,7 @@ import kotlinx.coroutines.launch
 
 class LandingActivity : BaseActivity(R.layout.activity_landing) {
 
-    override val modules = listOf(
-        loginNavigationModule,
-        *(LoginComponent.modules().toTypedArray())
-    )
+    override val modules = listOf(*(LoginComponent.modules().toTypedArray()))
 
     override fun doPreCreation() {
         setTheme(R.style.RpgAchievements)

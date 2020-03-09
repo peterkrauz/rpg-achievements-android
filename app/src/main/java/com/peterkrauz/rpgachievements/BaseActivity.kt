@@ -22,6 +22,8 @@ abstract class BaseActivity(@LayoutRes val layoutId: Int) : AppCompatActivity() 
     open fun doPreCreation() {}
     open fun doPostCreation() {}
 
+    // TODO: bind/unbind navigator here, on base activity
+
     override fun onDestroy() {
         unloadKoinModules(modules)
         super.onDestroy()

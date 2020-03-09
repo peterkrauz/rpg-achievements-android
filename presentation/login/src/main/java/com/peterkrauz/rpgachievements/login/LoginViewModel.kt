@@ -14,12 +14,16 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : StatefulViewModel
         EspressoIdlingResource.increment()
 
         postValue(LoginViewState.Loading)
+        performLogin(username, password)
+
+        EspressoIdlingResource.decrement()
+    }
+
+    private fun performLogin(username: String, password: String) {
         viewModelScope.launch(baseErrorHandler) {
             val authToken = loginUseCase.login(username, password)
             postValue(LoginViewState.Success(authToken))
         }
-
-        EspressoIdlingResource.decrement()
     }
 
     override fun handleError(errorContext: CoroutineContext, error: Throwable) {
