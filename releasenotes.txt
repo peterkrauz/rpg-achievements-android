@@ -1,6 +1,5 @@
-### Version 400.000
-- Esta versão é muito interessatem,m,,,,,
-- Patent big BO0M
+### Version 1.0.2
+- Create launcher icon
+- Integrate login flow
 
-
-Se voce recebeu este email... chupa meu pau
+uap uem apuhc

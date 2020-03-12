@@ -5,6 +5,7 @@ apply from: "$rootDir/test-libs.gradle"
 dependencies {
     implementation Libraries.koin
     implementation Libraries.material
+    implementation Libraries.threeTen
     implementation Libraries.appCompat
     implementation Libraries.navigation
     implementation Libraries.navigationUi
