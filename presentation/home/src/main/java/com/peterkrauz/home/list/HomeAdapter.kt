@@ -11,6 +11,31 @@ class HomeAdapter(
     private val onRpgClick: (RpgView) -> Unit
 ) : ListAdapter<HomeListItem, HomeViewHolder>(HomeDiffCallback) {
 
+    var playerName: String = ""
+        set(value) {
+            field = value
+            buildList()
+        }
+
+    var rpgs = listOf<RpgView>()
+        set(value) {
+            field = value
+            buildList()
+        }
+
+    private fun buildList() {
+        if (playerName.isBlank()) return
+
+        val headerItem = WelcomeHeaderItem(playerName)
+        val rpgItems = rpgs.map(::RpgItem)
+
+        val fullList = mutableListOf<HomeListItem>()
+        fullList.add(headerItem)
+        fullList.addAll(rpgItems)
+
+        submitList(fullList)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         return when (viewType) {
             WELCOME_HEADER_TYPE -> WelcomeHeaderViewHolder(inflate(R.layout.item_welcome_header, parent))
@@ -21,8 +46,8 @@ class HomeAdapter(
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         return when (val item = getItem(position)) {
-            is HomeListItem.RpgItem -> (holder as RpgViewHolder).bind(item, onRpgClick)
-            is HomeListItem.WelcomeHeaderItem -> (holder as WelcomeHeaderViewHolder).bind(item.playerName)
+            is RpgItem -> (holder as RpgViewHolder).bind(item, onRpgClick)
+            is WelcomeHeaderItem -> (holder as WelcomeHeaderViewHolder).bind(item.playerName)
         }
     }
 
@@ -30,10 +55,10 @@ class HomeAdapter(
 
     private object HomeDiffCallback : DiffUtil.ItemCallback<HomeListItem>() {
         override fun areItemsTheSame(old: HomeListItem, new: HomeListItem) = when {
-            old is HomeListItem.WelcomeHeaderItem && new is HomeListItem.WelcomeHeaderItem -> {
+            old is WelcomeHeaderItem && new is WelcomeHeaderItem -> {
                 old == new
             }
-            old is HomeListItem.RpgItem && new is HomeListItem.RpgItem -> {
+            old is RpgItem && new is RpgItem -> {
                 old.rpg.id == new.rpg.id
             }
             else -> throw IllegalStateException("Home Diff Callback error")

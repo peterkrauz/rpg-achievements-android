@@ -1,7 +1,7 @@
 package com.peterkrauz.data.api
 
+import com.peterkrauz.data.dto.AchievementDto
 import com.peterkrauz.data.dto.RpgDto
-import com.peterkrauz.domain.entity.Achievement
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -14,5 +14,5 @@ interface RpgApi {
     suspend fun getById(@Path("rpgId") id: Int): RpgDto
 
     @GET("api/rpgs/{rpgId}/achievements/")
-    suspend fun getAchievementsForRpg(@Path("rpgId") rpgId: Int): List<Achievement>
+    suspend fun getAchievementsForRpg(@Path("rpgId") rpgId: Int): List<AchievementDto>
 }

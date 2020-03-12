@@ -1,5 +1,9 @@
 package com.peterkrauz.domain.mapper
 
-interface Mapper<I, O> {
-    fun map(dto: I): O
+/**
+ * Dto goes in,
+ * Entity goes out
+ */
+interface Mapper<D, E> {
+    fun map(dto: D): E
 }

@@ -11,7 +11,7 @@ sealed class HomeViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
 class RpgViewHolder(view: View) : HomeViewHolder(view) {
 
-    fun bind(item: HomeListItem.RpgItem, onItemClick: (RpgView) -> Unit) = with(itemView) {
+    fun bind(item: RpgItem, onItemClick: (RpgView) -> Unit) = with(itemView) {
         item.rpg.run {
             textViewRpgTitle.text = title
             textViewRpgDescription.text = description

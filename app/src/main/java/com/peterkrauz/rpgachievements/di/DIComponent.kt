@@ -6,8 +6,8 @@ interface DIComponent {
 
     val dataModule: Module
     val domainModule: Module
-    val presentationModule: Module
     val navigationModule: Module
+    val presentationModule: Module
 
     fun modules() = listOf(dataModule, domainModule, presentationModule, navigationModule)
 }
