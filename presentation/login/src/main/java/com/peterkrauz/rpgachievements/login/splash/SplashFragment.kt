@@ -8,6 +8,6 @@ class SplashFragment : BaseFragment(R.layout.fragment_splash) {
 
     override fun setupView() {
         super.setupView()
-        paintStatusBar(R.color.black)
+        paintStatusBar(R.color.darkGrey)
     }
 }

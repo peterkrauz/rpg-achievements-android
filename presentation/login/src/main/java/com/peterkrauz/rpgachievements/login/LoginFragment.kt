@@ -57,6 +57,7 @@ class LoginFragment : StatefulFragment<LoginViewState>(R.layout.fragment_login) 
         textInputUsername.isEnabled = enabledViews
         textInputPassword.isEnabled = enabledViews
         buttonLogin.isEnabled = enabledViews
+        buttonLogin.isClickable = enabledViews
     }
 
     private fun proceedToHome(authToken: AuthorizationToken) {
