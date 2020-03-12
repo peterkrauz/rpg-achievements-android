@@ -1,5 +1,6 @@
-package com.peterkrauz.home
+package com.peterkrauz.home.activity
 
+import com.peterkrauz.home.R
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulFragment
 import org.koin.android.ext.android.inject
 

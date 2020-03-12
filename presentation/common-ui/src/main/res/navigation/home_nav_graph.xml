@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.peterkrauz.home.HomeFragment"
+        android:name="com.peterkrauz.home.activity.HomeFragment"
         android:label="HomeFragment"
         app:popUpTo="@id/homeFragment"
         app:popUpToInclusive="true"/>

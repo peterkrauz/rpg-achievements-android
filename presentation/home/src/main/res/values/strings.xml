@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_player">Welcome, Tatu-Chapado</string>
+    <string name="welcome_player">Welcome, %s</string>
 </resources>

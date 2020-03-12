@@ -1,4 +1,4 @@
-package com.peterkrauz.home
+package com.peterkrauz.home.model
 
 import android.os.Parcelable
 import com.peterkrauz.presentation.common_ui.list.Recyclable
@@ -7,8 +7,8 @@ import org.threeten.bp.LocalDate
 
 @Parcelize
 data class RpgView(
-    override val id: Int,
+    val id: Int,
     val title: String,
     val description: String,
     val createdAt: LocalDate
-) : Parcelable, Recyclable
+) : Parcelable

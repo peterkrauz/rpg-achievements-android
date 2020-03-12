@@ -2,9 +2,10 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemBackground"
     style="@style/Widget.MaterialComponents.CardView"
     android:layout_width="344dp"
-    android:layout_height="74dp"
+    android:layout_height="78dp"
     android:layout_marginTop="8dp"
     android:clickable="true"
     android:focusable="true"
@@ -16,13 +17,43 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/imageViewRpgIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            tools:src="@drawable/wizard_1"
+            tools:src="@drawable/icon_8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewRpgTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:maxWidth="300dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:includeFontPadding="false"
+            tools:text="Authali Invaders"
+            app:layout_constraintTop_toTopOf="@id/imageViewRpgIcon"
+            app:layout_constraintStart_toEndOf="@id/imageViewRpgIcon"/>
+
+        <TextView
+            android:id="@+id/textViewRpgDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:maxWidth="240dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            tools:text="An unusual group of empire-born characters join"
+            app:layout_constraintStart_toEndOf="@id/imageViewRpgIcon"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewRpgIcon"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

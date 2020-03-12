@@ -1,6 +1,6 @@
 package com.peterkrauz.rpgachievements.di.components
 
-import com.peterkrauz.home.HomeViewModel
+import com.peterkrauz.home.activity.HomeViewModel
 import com.peterkrauz.rpgachievements.di.DIComponent
 import org.koin.dsl.module
 
