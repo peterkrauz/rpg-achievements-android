@@ -5,6 +5,7 @@ import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.home.R
 import com.peterkrauz.home.list.HomeAdapter
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulFragment
+import com.peterkrauz.presentation.common_ui.extensions.getColorCompat
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
@@ -27,9 +28,15 @@ class HomeFragment : StatefulFragment<HomeViewState>(R.layout.fragment_home) {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
         }
+        swipeRefreshLayout.apply {
+            isEnabled = true
+            setOnRefreshListener { viewModel.onRefresh() }
+            setColorSchemeColors(getColorCompat(R.color.colorAccent))
+        }
     }
 
     override fun setViewState(viewState: HomeViewState) {
+        swipeRefreshLayout.isRefreshing = viewState == HomeViewState.Loading
         when (viewState) {
             is HomeViewState.RpgListSuccess -> {
                 adapter.rpgs = viewState.rpgs

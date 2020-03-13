@@ -61,4 +61,9 @@ class HomeViewModel(
     override fun handleError(errorContext: CoroutineContext, error: Throwable) {
         putValue(HomeViewState.Failure(error))
     }
+
+    fun onRefresh() {
+        fetchPlayer()
+        fetchRpgs()
+    }
 }
