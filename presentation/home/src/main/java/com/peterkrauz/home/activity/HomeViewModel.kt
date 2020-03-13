@@ -1,35 +1,56 @@
 package com.peterkrauz.home.activity
 
 import androidx.lifecycle.viewModelScope
+import com.peterkrauz.domain.application.GetPlayerUseCase
 import com.peterkrauz.domain.application.GetRpgsUseCase
+import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.home.model.RpgView
 import com.peterkrauz.home.model.mapper.RpgViewMapper
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
 
 class HomeViewModel(
     private val getRpgsUseCase: GetRpgsUseCase,
-    private val rpgMapper: RpgViewMapper
+    private val getPlayerUseCase: GetPlayerUseCase,
+    private val rpgMapper: RpgViewMapper,
+    private val sessionStore: SessionStore
 ) : StatefulViewModel<HomeViewState>() {
 
     init {
+        fetchPlayer()
         fetchRpgs()
+    }
+
+    private fun fetchPlayer() {
+        putValue(HomeViewState.Loading)
+        if (sessionStore.hasPlayer()) {
+            fetchPlayerLocally()
+        } else {
+            fetchPlayerRemotely()
+        }
+    }
+
+    private fun fetchPlayerLocally() {
+        putValue(HomeViewState.PlayerNameSuccess(sessionStore.getPlayerMinimal().name))
+    }
+
+    private fun fetchPlayerRemotely() {
+        viewModelScope.launch(baseErrorHandler) {
+            val authToken = sessionStore.getToken()
+            val player = getPlayerUseCase.get(authToken)
+            putValue(HomeViewState.PlayerNameSuccess(player.name))
+        }
     }
 
     private fun fetchRpgs() {
         viewModelScope.launch(baseErrorHandler) {
-            postValue(HomeViewState.Loading)
-            postValue(
+            putValue(HomeViewState.Loading)
+            putValue(
                 HomeViewState.RpgListSuccess(
-                    withContext(Dispatchers.IO) {
-                        getRpgsUseCase.get().map(rpgMapper::map)
-                    }
+                    getRpgsUseCase.get().map(rpgMapper::map)
                 )
             )
-            postValue(HomeViewState.Loading)
         }
     }
 
@@ -38,6 +59,6 @@ class HomeViewModel(
     }
 
     override fun handleError(errorContext: CoroutineContext, error: Throwable) {
-        postValue(HomeViewState.Failure(error))
+        putValue(HomeViewState.Failure(error))
     }
 }

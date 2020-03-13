@@ -14,16 +14,32 @@
     </item>
 
     <item>
-        <shape android:shape="rectangle">
-            <gradient
-                android:endColor="#FF8F07"
-                android:startColor="#FFC800"/>
-            <corners
-                android:topLeftRadius="4dp"
-                android:topRightRadius="4dp"
-                android:bottomLeftRadius="4dp"
-                android:bottomRightRadius="4dp" />
-        </shape>
+        <selector>
+            <item android:state_enabled="false">
+                <shape>
+                    <gradient
+                        android:endColor="#C1C1C1"
+                        android:startColor="#616161"/>
+                    <corners
+                        android:topLeftRadius="4dp"
+                        android:topRightRadius="4dp"
+                        android:bottomLeftRadius="4dp"
+                        android:bottomRightRadius="4dp" />
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <gradient
+                        android:endColor="#FF8F07"
+                        android:startColor="#FFC800"/>
+                    <corners
+                        android:topLeftRadius="4dp"
+                        android:topRightRadius="4dp"
+                        android:bottomLeftRadius="4dp"
+                        android:bottomRightRadius="4dp" />
+                </shape>
+            </item>
+        </selector>
     </item>
 
 </ripple>

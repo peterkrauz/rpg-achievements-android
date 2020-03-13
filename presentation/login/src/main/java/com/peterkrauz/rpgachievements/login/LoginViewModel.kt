@@ -10,7 +10,6 @@ import com.peterkrauz.domain.entity.AuthorizationToken
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulViewModel
 import com.peterkrauz.presentation.common_ui.routers.LoginRouter
 import kotlinx.coroutines.launch
-import org.koin.core.KoinComponent
 import org.koin.core.inject
 import org.koin.core.parameter.parametersOf
 import kotlin.coroutines.CoroutineContext
@@ -18,7 +17,7 @@ import kotlin.coroutines.CoroutineContext
 class LoginViewModel(
     private val loginUseCase: LoginUseCase,
     appContext: Context
-) : StatefulViewModel<LoginViewState>(), KoinComponent {
+) : StatefulViewModel<LoginViewState>() {
 
     private val loginRouter by inject<LoginRouter>()
 
@@ -36,7 +35,7 @@ class LoginViewModel(
             return
         }
 
-        postValue(LoginViewState.Loading)
+        putValue(LoginViewState.Loading)
         performLogin(username, password)
 
         EspressoIdlingResource.decrement()
@@ -45,12 +44,12 @@ class LoginViewModel(
     private fun performLogin(username: String, password: String) {
         viewModelScope.launch(baseErrorHandler) {
             val authToken = loginUseCase.login(username, password)
-            postValue(LoginViewState.Success(authToken))
+            putValue(LoginViewState.Success(authToken))
         }
     }
 
     override fun handleError(errorContext: CoroutineContext, error: Throwable) {
-        postValue(LoginViewState.Failure(error))
+        putValue(LoginViewState.Failure(error))
     }
 
     fun proceedToHome(authToken: AuthorizationToken) {

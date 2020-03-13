@@ -5,9 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.peterkrauz.presentation.common_ui.base.BaseViewState
 import kotlinx.coroutines.CoroutineExceptionHandler
+import org.koin.core.KoinComponent
 import kotlin.coroutines.CoroutineContext
 
-abstract class StatefulViewModel<ViewState : BaseViewState> : ViewModel() {
+abstract class StatefulViewModel<ViewState : BaseViewState> : ViewModel(), KoinComponent {
 
     protected val baseErrorHandler = CoroutineExceptionHandler(::handleError)
 
@@ -16,7 +17,7 @@ abstract class StatefulViewModel<ViewState : BaseViewState> : ViewModel() {
 
     abstract fun handleError(errorContext: CoroutineContext, error: Throwable)
 
-    protected fun postValue(state: ViewState) {
-        _viewState.postValue(state)
+    protected fun putValue(state: ViewState) {
+        _viewState.value = state
     }
 }

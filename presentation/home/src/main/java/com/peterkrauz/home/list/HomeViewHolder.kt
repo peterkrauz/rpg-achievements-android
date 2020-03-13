@@ -11,8 +11,13 @@ sealed class HomeViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
 class RpgViewHolder(view: View) : HomeViewHolder(view) {
 
-    fun bind(item: RpgItem, onItemClick: (RpgView) -> Unit) = with(itemView) {
+    fun bind(
+        item: RpgItem,
+        iconId: Int,
+        onItemClick: (RpgView) -> Unit
+    ) = with(itemView) {
         item.rpg.run {
+            imageViewRpgIcon.setImageDrawable(context.resources.getDrawable(iconId, null))
             textViewRpgTitle.text = title
             textViewRpgDescription.text = description
             itemBackground.setOnClickListener {

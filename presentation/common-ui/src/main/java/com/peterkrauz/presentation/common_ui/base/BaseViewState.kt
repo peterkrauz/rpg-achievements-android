@@ -1,3 +1,5 @@
 package com.peterkrauz.presentation.common_ui.base
 
-interface BaseViewState
+interface BaseViewState {
+    class Failure(val error: Throwable) : BaseViewState
+}
