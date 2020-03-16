@@ -7,6 +7,8 @@ import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.home.model.RpgView
 import com.peterkrauz.home.model.mapper.RpgViewMapper
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulViewModel
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
@@ -18,44 +20,51 @@ class HomeViewModel(
 ) : StatefulViewModel<HomeViewState>() {
 
     init {
-        fetchPlayer()
-        fetchRpgs()
+        loadScreen()
     }
 
-    private fun fetchPlayer() {
-        putValue(HomeViewState.Loading)
-        if (sessionStore.hasPlayer()) {
-            fetchPlayerLocally()
-        } else {
-            fetchPlayerRemotely()
+    private fun loadScreen() {
+        viewModelScope.launch {
+            fetchPlayer()
+            fetchRpgs()
         }
     }
 
-    private fun fetchPlayerLocally() {
-        putValue(
+    private suspend fun fetchPlayer() {
+        putValue(HomeViewState.Loading)
+        val fetchPlayerState = if (sessionStore.hasPlayer()) {
+            fetchPlayerLocallyAsync()
+        } else {
+            fetchPlayerRemotelyAsync()
+        }
+        putValue(fetchPlayerState.await())
+    }
+
+    private fun fetchPlayerLocallyAsync(): Deferred<HomeViewState.PlayerNameSuccess> {
+        return viewModelScope.async {
             HomeViewState.PlayerNameSuccess(
                 sessionStore.getPlayerMinimal().name
             )
-        )
+        }
     }
 
-    private fun fetchPlayerRemotely() {
-        viewModelScope.launch(baseErrorHandler) {
+    private fun fetchPlayerRemotelyAsync(): Deferred<HomeViewState.PlayerNameSuccess> {
+        return viewModelScope.async {
             val authToken = sessionStore.getToken()
             val player = getPlayerUseCase.get(authToken)
-            putValue(HomeViewState.PlayerNameSuccess(player.name))
+            HomeViewState.PlayerNameSuccess(player.name)
         }
     }
 
-    private fun fetchRpgs() {
-        viewModelScope.launch(baseErrorHandler) {
-            putValue(HomeViewState.Loading)
-            putValue(
-                HomeViewState.RpgListSuccess(
+    private suspend fun fetchRpgs() {
+        putValue(HomeViewState.Loading)
+        putValue(
+            HomeViewState.RpgListSuccess(
+                viewModelScope.async {
                     getRpgsUseCase.get().map(rpgMapper::map)
-                )
+                }.await()
             )
-        }
+        )
     }
 
     fun onRpgClick(rpg: RpgView) {
@@ -67,7 +76,6 @@ class HomeViewModel(
     }
 
     fun onRefresh() {
-        fetchPlayer()
-        fetchRpgs()
+        loadScreen()
     }
 }
