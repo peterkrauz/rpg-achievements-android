@@ -32,7 +32,11 @@ class HomeViewModel(
     }
 
     private fun fetchPlayerLocally() {
-        putValue(HomeViewState.PlayerNameSuccess(sessionStore.getPlayerMinimal().name))
+        putValue(
+            HomeViewState.PlayerNameSuccess(
+                sessionStore.getPlayerMinimal().name
+            )
+        )
     }
 
     private fun fetchPlayerRemotely() {
