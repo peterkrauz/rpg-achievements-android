@@ -1,12 +1,16 @@
 package com.peterkrauz.home.activity
 
+import android.os.Bundle
+import androidx.core.os.bundleOf
 import androidx.lifecycle.viewModelScope
+import com.peterkrauz.common.SingleLiveEvent
 import com.peterkrauz.domain.application.GetPlayerUseCase
 import com.peterkrauz.domain.application.GetRpgsUseCase
 import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.home.model.RpgView
 import com.peterkrauz.home.model.mapper.RpgViewMapper
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulViewModel
+import com.peterkrauz.presentation.common_ui.utils.BundleKeys
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -18,6 +22,8 @@ class HomeViewModel(
     private val rpgMapper: RpgViewMapper,
     private val sessionStore: SessionStore
 ) : StatefulViewModel<HomeViewState>() {
+
+    val rpgClickedLiveEvent = SingleLiveEvent<Bundle>()
 
     init {
         loadScreen()
@@ -68,7 +74,9 @@ class HomeViewModel(
     }
 
     fun onRpgClick(rpg: RpgView) {
-
+        rpgClickedLiveEvent.value = bundleOf(
+            BundleKeys.RPG_ID_KEY to rpg.id
+        )
     }
 
     override fun handleError(errorContext: CoroutineContext, error: Throwable) {

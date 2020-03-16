@@ -17,7 +17,10 @@ import com.peterkrauz.domain.usecase.GetPlayerUseCaseImpl
 import com.peterkrauz.domain.usecase.GetRpgsUseCaseImpl
 import com.peterkrauz.home.activity.HomeViewModel
 import com.peterkrauz.home.model.mapper.RpgViewMapper
+import com.peterkrauz.presentation.common_ui.routers.HomeRouter
+import com.peterkrauz.rpgachievements.achievements.AchievementsViewModel
 import com.peterkrauz.rpgachievements.di.DIComponent
+import com.peterkrauz.rpgachievements.navigator.Navigator
 import org.koin.dsl.module
 
 object HomeComponent : DIComponent {
@@ -51,6 +54,9 @@ object HomeComponent : DIComponent {
                 sessionStore = store
             )
         }
+        single { (rpgId: Int) -> AchievementsViewModel(rpgId) }
+
+        single<HomeRouter> { Navigator }
     }
 
     override val navigationModule = module { }

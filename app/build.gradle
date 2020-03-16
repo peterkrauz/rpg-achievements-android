@@ -42,6 +42,8 @@ dependencies {
     implementation project(ModulePaths.data)
     implementation project(ModulePaths.home)
     implementation project(ModulePaths.login)
+    implementation project(ModulePaths.common)
     implementation project(ModulePaths.domain)
     implementation project(ModulePaths.commonUi)
+    implementation project(ModulePaths.achievements)
 }

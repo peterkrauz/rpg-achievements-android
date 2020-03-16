@@ -9,6 +9,25 @@
         android:name="com.peterkrauz.home.activity.HomeFragment"
         android:label="HomeFragment"
         app:popUpTo="@id/homeFragment"
-        app:popUpToInclusive="true"/>
+        app:popUpToInclusive="true">
+        <action
+            android:id="@+id/action_home_to_achievements"
+            app:destination="@id/achievementsFragment">
+            <argument
+                android:name="rpgId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/achievementsFragment"
+        android:name="com.peterkrauz.rpgachievements.achievements.AchievementsFragment"
+        android:label="LabelFragment">
+
+        <argument
+            android:name="rpgId"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
 
 </navigation>

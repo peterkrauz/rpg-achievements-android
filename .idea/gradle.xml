@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/presentation" />
+            <option value="$PROJECT_DIR$/presentation/achievements" />
             <option value="$PROJECT_DIR$/presentation/common-ui" />
             <option value="$PROJECT_DIR$/presentation/home" />
             <option value="$PROJECT_DIR$/presentation/login" />

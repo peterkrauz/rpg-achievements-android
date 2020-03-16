@@ -104,4 +104,5 @@ object ModulePaths {
     const val home =     ":presentation:home"
     const val login =    ":presentation:login"
     const val commonUi = ":presentation:common-ui"
+    const val achievements = ":presentation:achievements"
 }
