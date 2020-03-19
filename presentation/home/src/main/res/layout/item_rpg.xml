@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="368dp"
     android:layout_height="wrap_content"
-    android:minHeight="84dp"
     android:layout_marginTop="8dp"
-    app:cardCornerRadius="4dp"
+    android:minHeight="84dp"
     android:clickable="true"
     android:focusable="true"
     android:background="@drawable/ripple_rpg_card_background"
+    app:cardCornerRadius="4dp"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
