@@ -5,6 +5,6 @@ import com.peterkrauz.domain.entity.Player
 
 interface PlayerRepository {
     suspend fun getAll(): List<Player>
-    suspend fun getById(): Player
+    suspend fun getById(playerId: Int): Player
     suspend fun getByToken(authToken: AuthorizationToken): Player
 }

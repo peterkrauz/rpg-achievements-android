@@ -1,5 +1,6 @@
 package com.peterkrauz.rpgachievements.di.components
 
+import android.os.Bundle
 import com.peterkrauz.data.ServiceFactory
 import com.peterkrauz.data.api.PlayerApi
 import com.peterkrauz.data.api.RpgApi
@@ -19,6 +20,7 @@ import com.peterkrauz.home.activity.HomeViewModel
 import com.peterkrauz.home.model.mapper.RpgViewMapper
 import com.peterkrauz.presentation.common_ui.routers.HomeRouter
 import com.peterkrauz.rpgachievements.achievements.AchievementsViewModel
+import com.peterkrauz.rpgachievements.achievements.model.mapper.AchievementViewMapper
 import com.peterkrauz.rpgachievements.di.DIComponent
 import com.peterkrauz.rpgachievements.navigator.Navigator
 import org.koin.dsl.module
@@ -46,6 +48,7 @@ object HomeComponent : DIComponent {
 
     override val presentationModule = module {
         single { RpgViewMapper() }
+        single { AchievementViewMapper() }
         single { (store: SessionStore) ->
             HomeViewModel(
                 getRpgsUseCase = get(),
@@ -54,7 +57,14 @@ object HomeComponent : DIComponent {
                 sessionStore = store
             )
         }
-        single { (rpgId: Int) -> AchievementsViewModel(rpgId) }
+        factory { (achievementDetails: Bundle) ->
+            AchievementsViewModel(
+                achievementDetails = achievementDetails,
+                rpgRepository = get(),
+                playerRepository = get(),
+                mapper = get()
+            )
+        }
 
         single<HomeRouter> { Navigator }
     }

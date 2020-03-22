@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.ListAdapter
 import com.peterkrauz.home.R
 import com.peterkrauz.home.model.RpgView
 import com.peterkrauz.presentation.common_ui.extensions.inflate
-import java.util.concurrent.ThreadLocalRandom
-import kotlin.random.Random
 
 class HomeAdapter(
     private val onRpgClick: (RpgView) -> Unit

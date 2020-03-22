@@ -7,6 +7,7 @@ import com.peterkrauz.common.SingleLiveEvent
 import com.peterkrauz.domain.application.GetPlayerUseCase
 import com.peterkrauz.domain.application.GetRpgsUseCase
 import com.peterkrauz.domain.application.session.SessionStore
+import com.peterkrauz.domain.entity.Player
 import com.peterkrauz.home.model.RpgView
 import com.peterkrauz.home.model.mapper.RpgViewMapper
 import com.peterkrauz.presentation.common_ui.base.stateful.StatefulViewModel
@@ -23,6 +24,7 @@ class HomeViewModel(
     private val sessionStore: SessionStore
 ) : StatefulViewModel<HomeViewState>() {
 
+    private lateinit var storedPlayer: Player
     val rpgClickedLiveEvent = SingleLiveEvent<Bundle>()
 
     init {
@@ -57,7 +59,7 @@ class HomeViewModel(
     private fun fetchPlayerRemotelyAsync(): Deferred<HomeViewState.PlayerNameSuccess> {
         return viewModelScope.async {
             val authToken = sessionStore.getToken()
-            val player = getPlayerUseCase.get(authToken)
+            val player = getPlayerUseCase.get(authToken).also { storedPlayer = it }
             HomeViewState.PlayerNameSuccess(player.name)
         }
     }
@@ -75,7 +77,8 @@ class HomeViewModel(
 
     fun onRpgClick(rpg: RpgView) {
         rpgClickedLiveEvent.value = bundleOf(
-            BundleKeys.RPG_ID_KEY to rpg.id
+            BundleKeys.RPG_ID_KEY to rpg.id,
+            BundleKeys.PLAYER_ID_KEY to storedPlayer.id
         )
     }
 

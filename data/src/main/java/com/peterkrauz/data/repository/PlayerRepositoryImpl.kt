@@ -18,8 +18,10 @@ class PlayerRepositoryImpl(
         TODO("not implemented")
     }
 
-    override suspend fun getById(): Player {
-        TODO("not implemented")
+    override suspend fun getById(playerId: Int) = withContext(Dispatchers.IO) {
+        val response = playerApi.getById(playerId)
+        if (!response.isSuccessful) throw Exception()
+        playerMapper.map(response.body() ?: throw Exception())
     }
 
     override suspend fun getByToken(authToken: AuthorizationToken) = withContext(Dispatchers.IO) {
