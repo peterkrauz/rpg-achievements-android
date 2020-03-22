@@ -13,7 +13,7 @@ class AchievementViewHolder(view: View) : AchievementItemViewHolder(view) {
     fun bind(item: AchievementItem, isCompleted: Boolean) = with(itemView) {
         item.achievement.run {
             imageViewAchievementIcon.setImageDrawable(
-                context.resources.getDrawable(getAchievementIcon(isCompleted))
+                context.resources.getDrawable(getAchievementIcon(isCompleted), null)
             )
             textViewAchievementTitle.text = title
             textViewAchievementDescription.text = description

@@ -47,7 +47,7 @@ class AchievementsViewModel(
     private suspend fun fetchAchievementsAsync(): Deferred<AchievementsViewState.AchievementListSuccess> {
         return viewModelScope.async {
             AchievementsViewState.AchievementListSuccess(
-                rpgRepository.getAchievementsForRpg(rpgId).map(mapper::map)
+                rpgRepository.getAchievementsForRpg(rpgId).map(mapper::map).sortedBy { it.title }
             )
         }
     }
