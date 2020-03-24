@@ -30,6 +30,7 @@ class AchievementsFragment : StatefulFragment<AchievementsViewState>(R.layout.fr
             setOnRefreshListener { viewModel.onRefresh() }
             setColorSchemeColors(getColorCompat(R.color.colorAccent))
         }
+        fabFilter.setOnClickListener { viewModel.filterCompleted() }
     }
 
     override fun setViewState(viewState: AchievementsViewState) {
