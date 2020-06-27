@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply from: "$rootDir/common-plugins.gradle"
+apply from: "$rootDir/test-libs.gradle"
+
+dependencies {
+    implementation Libraries.lifecycleRuntime
+    implementation Libraries.lifecycleRuntimektx
+    implementation Libraries.lifecycleLiveDataktx
+
+    implementation TestLibraries.idlingResource
+}

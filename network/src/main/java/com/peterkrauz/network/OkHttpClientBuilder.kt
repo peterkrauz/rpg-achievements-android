@@ -8,7 +8,7 @@ internal object OkHttpClientBuilder {
     fun build(debug: Boolean, apiKey: String): OkHttpClient {
         val httpLoginInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT)
         val clientBuilder = OkHttpClient.Builder().apply {
-            addInterceptor(AuthenticationInterceptor(apiKey))
+//            addInterceptor(AuthenticationInterceptor(apiKey))
         }
 
         if (debug) {

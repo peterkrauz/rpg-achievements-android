@@ -4,17 +4,23 @@ apply from: "$rootDir/test-libs.gradle"
 
 android {
     defaultConfig { config ->
-        config.buildConfigField "String", "BASE_URL", "\"https://api.punkapi.com/v2/\""
+        config.buildConfigField "String", "BASE_URL", "\"https://protected-headland-90166.herokuapp.com/\""
         config.buildConfigField "String", "API_KEY", "\"7bcc479222ade013f07448541a623ed7\""
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.ktx
     implementation Libraries.moshi
     implementation Libraries.kotlin
+    implementation Libraries.threeTen
     implementation Libraries.retrofit
+    implementation Libraries.coroutines
+    implementation Libraries.coroutinesAndroid
 
-    api project(ModulePaths.domain)
+    kapt Libraries.moshiCodegen
+
+    implementation project(ModulePaths.domain)
     implementation project(ModulePaths.network)
 }

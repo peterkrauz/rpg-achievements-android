@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="368dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:minHeight="84dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/ripple_rpg_card_background"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/ripple_rpg_card_background">
+
+        <ImageView
+            android:id="@+id/imageViewRpgIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            tools:src="@drawable/icon_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/textViewRpgTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:maxWidth="280dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:includeFontPadding="false"
+            tools:text="Authali Invaders"
+            app:layout_constraintTop_toTopOf="@id/imageViewRpgIcon"
+            app:layout_constraintStart_toEndOf="@id/imageViewRpgIcon"/>
+
+        <TextView
+            android:id="@+id/textViewRpgDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:maxWidth="270dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:layout_marginBottom="16dp"
+            tools:text="A group of empire-born characters are invited to an unusual mission: to infiltrate and disrupt the invisible shield that protects the City of the World's Desire - Authali."
+            app:layout_constraintTop_toBottomOf="@id/textViewRpgTitle"
+            app:layout_constraintStart_toEndOf="@id/imageViewRpgIcon"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

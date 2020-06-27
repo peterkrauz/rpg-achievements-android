@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="type_username">Enter your username</string>
+    <string name="type_password">Enter your password</string>
+    <string name="enter_login_info">Log into Rpg Achievements</string>
+    <string name="login">Login</string>
+</resources>

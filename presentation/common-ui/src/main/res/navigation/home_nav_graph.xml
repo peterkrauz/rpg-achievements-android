@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.peterkrauz.home.activity.HomeFragment"
+        android:label="HomeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true">
+        <action
+            android:id="@+id/action_home_to_achievements"
+            app:destination="@id/achievementsFragment">
+            <argument
+                android:name="rpgId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/achievementsFragment"
+        android:name="com.peterkrauz.rpgachievements.achievements.AchievementsFragment"
+        android:label="LabelFragment">
+
+        <argument
+            android:name="rpgId"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+
+</navigation>

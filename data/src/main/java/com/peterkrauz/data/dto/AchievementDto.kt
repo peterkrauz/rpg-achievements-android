@@ -1,10 +1,11 @@
 package com.peterkrauz.data.dto
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class AchievementDto(
     @Json(name = "id") val id: Int,
-    @Json(name = "rpg_id") val rpgId: Int,
-    @Json(name = "completed") val completed: Boolean,
+    @Json(name = "title") val title: String,
     @Json(name = "description") val description: String
 )
