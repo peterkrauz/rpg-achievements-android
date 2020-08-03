@@ -28,7 +28,7 @@ class AchievementAdapter : ListAdapter<AchievementListItem, AchievementItemViewH
         }
 
     private fun buildList() {
-        if (rpgName.isBlank() || completedAchievements.isEmpty()) return
+        if (rpgName.isBlank()) return
 
         val headerItem = AchievementHeader(rpgName)
         val achievementItems = achievements.map(::AchievementItem)

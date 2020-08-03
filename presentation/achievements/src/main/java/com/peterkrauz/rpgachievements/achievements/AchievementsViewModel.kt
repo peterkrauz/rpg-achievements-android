@@ -33,7 +33,7 @@ class AchievementsViewModel(
     }
 
     private fun loadScreen() {
-        viewModelScope.launch {
+        viewModelScope.launch(baseErrorHandler) {
             coroutineScope { putValue(AchievementsViewState.Loading) }
             coroutineScope { putValue(fetchRpgAsync().await()) }
             coroutineScope { putValue(fetchAchievementsAsync().await()) }
@@ -42,7 +42,7 @@ class AchievementsViewModel(
     }
 
     private suspend fun fetchRpgAsync(): Deferred<AchievementsViewState.RpgNameSuccess> {
-        return viewModelScope.async {
+        return viewModelScope.async(baseErrorHandler) {
             AchievementsViewState.RpgNameSuccess(
                 rpgRepository.getById(rpgId).title
             )
@@ -50,7 +50,7 @@ class AchievementsViewModel(
     }
 
     private suspend fun fetchAchievementsAsync(): Deferred<AchievementsViewState.AchievementListSuccess> {
-        return viewModelScope.async {
+        return viewModelScope.async(baseErrorHandler) {
             AchievementsViewState.AchievementListSuccess(
                 fetchAchievements()
             )
@@ -62,7 +62,7 @@ class AchievementsViewModel(
     }
 
     private suspend fun fetchPlayerCompletedAchievementsIdsAsync(): Deferred<AchievementsViewState.CompletedAchievementsIdsSuccess> {
-        return viewModelScope.async {
+        return viewModelScope.async(baseErrorHandler) {
             AchievementsViewState.CompletedAchievementsIdsSuccess(
                 fetchPlayer().achievements
             )

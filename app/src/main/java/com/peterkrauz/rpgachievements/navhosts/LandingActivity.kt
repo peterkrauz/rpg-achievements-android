@@ -1,6 +1,5 @@
 package com.peterkrauz.rpgachievements.navhosts
 
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.peterkrauz.domain.application.session.SessionStore
 import com.peterkrauz.presentation.common_ui.routers.LoginRouter
@@ -10,8 +9,6 @@ import com.peterkrauz.rpgachievements.login.splash.SplashScreenListener
 import com.peterkrauz.rpgachievements.navhosts.base.BaseActivity
 import com.peterkrauz.rpgachievements.navigator.Navigator
 import kotlinx.android.synthetic.main.activity_landing.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
