@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="368dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:minHeight="96dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/ripple_rpg_card_background"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="96dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/ripple_rpg_card_background">
+
+        <ImageView
+            android:id="@+id/imageViewAchievementIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            tools:src="@drawable/ic_achiev_ongoing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewAchievementTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:maxWidth="240dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            tools:text="The Stargazer"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:includeFontPadding="false"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintTop_toTopOf="@id/imageViewAchievementIcon"
+            app:layout_constraintStart_toEndOf="@id/imageViewAchievementIcon"/>
+
+        <TextView
+            android:id="@+id/textViewAchievementDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:maxWidth="240dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:layout_marginBottom="16dp"
+            tools:text="Together with the Blue Wind, uncovrrrrrrrrrrer the origins of his wandering alien folk"
+            app:layout_constraintTop_toBottomOf="@id/textViewAchievementTitle"
+            app:layout_constraintStart_toEndOf="@id/imageViewAchievementIcon"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,2 +1,11 @@
-include ':app'
 rootProject.name='Rpg Achievements'
+
+include ':app'
+include ':data'
+include ':common'
+include ':domain'
+include ':network'
+include ':presentation:login'
+include ':presentation:common-ui'
+include ':presentation:home'
+include ':presentation:achievements'

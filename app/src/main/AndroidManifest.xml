@@ -3,19 +3,24 @@
     package="com.peterkrauz.rpgachievements">
 
     <application
+        android:name=".AchievementsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/rpg_achievements"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/RpgAchievements.Launcher">
+        <activity android:name=".navhosts.LandingActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".navhosts.HomeActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

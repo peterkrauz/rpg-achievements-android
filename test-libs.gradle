@@ -1,0 +1,31 @@
+dependencies {
+    // Dependencies for local unit tests
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.hamcrest
+    testImplementation TestLibraries.testRules
+    testImplementation TestLibraries.mockitoCore
+    testImplementation TestLibraries.testExtJunit
+    testImplementation TestLibraries.mockitoKotlin
+    testImplementation TestLibraries.coroutinesTest
+    testImplementation TestLibraries.mockitoAndroid
+    testImplementation TestLibraries.coreArchTesting
+    testImplementation TestLibraries.testExtJunitKtx
+    testImplementation TestLibraries.supportAnnotations
+
+
+    // Dependencies for Android unit tests
+    androidTestImplementation TestLibraries.espresso
+    androidTestImplementation TestLibraries.testRules
+    androidTestImplementation TestLibraries.testRunner
+    androidTestImplementation TestLibraries.mockitoCore
+    androidTestImplementation TestLibraries.testExtJunit
+    androidTestImplementation TestLibraries.coroutinesTest
+    androidTestImplementation TestLibraries.testExtJunitKtx
+    androidTestImplementation TestLibraries.supportAnnotations
+
+
+    testImplementation Libraries.koin
+    testImplementation TestLibraries.koinTest
+    androidTestImplementation Libraries.koin
+    androidTestImplementation TestLibraries.koinTest
+}
